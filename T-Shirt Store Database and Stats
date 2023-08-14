@@ -1,0 +1,45 @@
+--Create a shirt store database
+
+CREATE TABLE shirt_store (id INTEGER PRIMARY KEY, sleeves TEXT, size TEXT, department TEXT, quantity INTEGER, price INTEGER);
+
+INSERT INTO shirt_store VALUES
+(1, 'Short Sleeves', 'S', 'kids', 5, 5),
+(2, 'Short Sleeves', 'M', 'kids', 5, 5),
+(3, 'Short Sleeves', 'L', 'kids', 5, 5),
+(4, 'Short Sleeves', 'XL', 'kids', 5, 5),
+(5, 'Short Sleeves', 'S', 'womens', 5, 7),
+(6, 'Short Sleeves', 'M', 'womens', 5, 7),
+(7, 'Short Sleeves', 'L', 'womens', 5, 7),
+(8, 'Short Sleeves', 'XL', 'womens', 5, 7),
+(9, 'Short Sleeves', 'S', 'mens', 5, 8),
+(10, 'Short Sleeves', 'M', 'mens', 5, 8),
+(11, 'Short Sleeves', 'L', 'mens', 5, 8),
+(12, 'Short Sleeves', 'XL', 'mens', 5, 8),
+(13, 'Long Sleeves', 'S', 'kids', 4, 6),
+(14, 'Long Sleeves', 'M', 'kids', 4, 6),
+(15, 'Long Sleeves', 'L', 'kids', 4, 6),
+(16, 'Long Sleeves', 'XL', 'kids', 4, 6),
+(17, 'Long Sleeves', 'S', 'womens', 4, 8),
+(18, 'Long Sleeves', 'M', 'womens', 4, 8),
+(19, 'Long Sleeves', 'L', 'womens', 4, 8),
+(20, 'Long Sleeves', 'XL', 'womens', 4, 8),
+(21, 'Long Sleeves', 'S', 'mens', 4, 9),
+(22, 'Long Sleeves', 'M', 'mens', 4, 9),
+(23, 'Long Sleeves', 'L', 'mens', 4, 9),
+(24, 'Long Sleeves', 'XL', 'mens', 4, 9)
+;
+
+--display the database ordered by price. 
+SELECT * FROM shirt_store
+ORDER BY price asc; 
+
+--what is the avg price of shirts in the mens department? 
+SELECT AVG(price) "avg mens shirt price"
+FROM shirt_store
+where department='mens'; 
+
+--what shirts have the lowest quantity? 
+SELECT sleeves, size, department, quantity 
+FROM shirt_store
+order by quantity asc
+limit 1; 
